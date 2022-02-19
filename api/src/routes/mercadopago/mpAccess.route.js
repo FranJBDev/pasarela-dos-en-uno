@@ -11,7 +11,7 @@ const cors = require("cors");
 
 router.use(
   cors({
-    origin: "https://front3-pasarela.herokuapp.com",
+    origin: "*",
   })
 );
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -39,12 +39,9 @@ router.post("/", async (req, res) => {
         unit_price: parseFloat(e.unit_price),
         quantity: parseInt(e.quantity)
       }
-
     })
 
     itemsHard = itemsMp;
-
-
 
     try {
       let preference = {
@@ -56,11 +53,11 @@ router.post("/", async (req, res) => {
           mode: "not_specified",
         }, // establece el costo de envio por defecto
         back_urls: {
-          success: "https://front3-pasarela.herokuapp.com/mp", //     ANDUVO TODO OK
+          success: "localhost:3001/mp", //     ANDUVO TODO OK
           //  TE DA LA OPCION DE VOLVER AL SITIO (ACA) CUANDO ALGO FALLA
-          failure: "https://front3-pasarela.herokuapp.com/mp",
+          failure: "localhost:3001/mp",
         },
-        notification_url: "https://back3-pasarela.herokuapp.com/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
+        notification_url: "localhost:3001/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
         auto_return: "approved",
       };
       // "https://demo-pasarela.herokuapp.com/notification"

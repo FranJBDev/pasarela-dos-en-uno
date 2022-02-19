@@ -21,7 +21,7 @@ export function sendCart(data) {
         }
 
         const config = {
-            url: 'https://demo-pasarela.herokuapp.com/mp',
+            url: 'http://localhost:3001/mp',
             method: 'post',
             headers: {
                 'Access-Control-Allow-Origin': '*',
