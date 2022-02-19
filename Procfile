@@ -1,1 +1,1 @@
-web: sh -c 'npm start && gnpm run front'
+web: sh -c 'npm start && npm run front'
