@@ -1,2 +1,1 @@
-web:     npm run front
-worker:  npm start
+web: sh -c 'npm start && gnpm run front'
