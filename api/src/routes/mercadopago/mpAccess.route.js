@@ -53,11 +53,12 @@ router.post("/", async (req, res) => {
           mode: "not_specified",
         }, // establece el costo de envio por defecto
         back_urls: {
-          success: "localhost:3001/mp", //     ANDUVO TODO OK
+          success: "http://localhost:3000/mp", //     ANDUVO TODO OK
           //  TE DA LA OPCION DE VOLVER AL SITIO (ACA) CUANDO ALGO FALLA
-          failure: "localhost:3001/mp",
+          failure: "http://localhost:3000/mp",
         },
-        notification_url: "localhost:3001/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
+        notification_url: "https://3126-191-95-145-99.ngrok.io/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
+
         auto_return: "approved",
       };
       // "https://demo-pasarela.herokuapp.com/notification"
