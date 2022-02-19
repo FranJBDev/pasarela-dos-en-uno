@@ -39,12 +39,9 @@ router.post("/", async (req, res) => {
         unit_price: parseFloat(e.unit_price),
         quantity: parseInt(e.quantity)
       }
-
     })
 
     itemsHard = itemsMp;
-
-
 
     try {
       let preference = {
@@ -61,6 +58,7 @@ router.post("/", async (req, res) => {
           failure: "http://localhost:3000/mp",
         },
         notification_url: "https://3126-191-95-145-99.ngrok.io/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
+
         auto_return: "approved",
       };
       // "https://demo-pasarela.herokuapp.com/notification"
