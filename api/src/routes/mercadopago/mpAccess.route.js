@@ -11,7 +11,7 @@ const cors = require("cors");
 
 router.use(
   cors({
-    origin: "https://front3-pasarela.herokuapp.com",
+    origin: "*",
   })
 );
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -56,11 +56,11 @@ router.post("/", async (req, res) => {
           mode: "not_specified",
         }, // establece el costo de envio por defecto
         back_urls: {
-          success: "https://front3-pasarela.herokuapp.com/mp", //     ANDUVO TODO OK
+          success: "http://localhost:3000/mp", //     ANDUVO TODO OK
           //  TE DA LA OPCION DE VOLVER AL SITIO (ACA) CUANDO ALGO FALLA
-          failure: "https://front3-pasarela.herokuapp.com/mp",
+          failure: "http://localhost:3000/mp",
         },
-        notification_url: "https://back3-pasarela.herokuapp.com/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
+        notification_url: "https://3126-191-95-145-99.ngrok.io/notification", //"https://mercadopago-checkout.herokuapp.com/webhook", NO SE QUE HACE
         auto_return: "approved",
       };
       // "https://demo-pasarela.herokuapp.com/notification"
